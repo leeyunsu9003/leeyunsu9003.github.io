@@ -594,6 +594,11 @@
     color: var(--text-muted);
   }
   .project-meta span { color: var(--text); }
+  .project-summary code {
+    font-family: var(--mono);
+    font-size: 0.82em;
+    color: var(--accent);
+  }
 
 </style>
 </head>
@@ -832,6 +837,173 @@
       </div>
     </div>
 
+    <!-- SexyCardRPG -->
+    <div class="project-card reveal">
+      <div class="project-thumb">
+        <div class="project-thumb-bg" style="background: linear-gradient(135deg, #2a0a20 0%, #3a1030 100%);"></div>
+        <div class="project-thumb-icon">🃏</div>
+      </div>
+      <div class="project-body">
+        <p class="project-type">Card Collection Turn-based RPG · 출시</p>
+        <h3 class="project-title">Sexy Card RPG</h3>
+        <div class="project-meta">
+          역할: <span>UI·스토리를 제외한 게임 로직 전반 — 전투 · 도감 · 팀 · 포획 연출 · 저장 · Firebase</span>
+          플랫폼: <span>Android (Google Play)</span>
+          엔진: <span>Unity 6 URP / Firebase / LevelPlay</span>
+        </div>
+        <div class="project-summary">
+          <p class="project-summary-title">// Summary</p>
+          <p>몬스터 카드를 모으고 팀을 짜서 싸우는 턴제 카드 RPG입니다. 전투 진행을 담당하는 <code>BattleTurnController</code>를 처리 단계(판정·효과·상태이상·필드·패배·입력)별로 나누어 설계했고, 타입 상성 · 상태이상 · 날씨 · 스킬 복사 같은 규칙을 각각 독립된 모듈로 분리했습니다.</p>
+          <p style="margin-top:0.75rem;"><strong style="color:var(--accent);">배틀 규칙 분리</strong> — 던전 · 체육관 · 리그 · 야생 몬스터 · 유저 대전을 <code>IBattleRule</code> 인터페이스로 묶어, 같은 전투 엔진 위에서 모드마다 규칙만 갈아 끼우도록 만들었습니다.</p>
+          <p style="margin-top:0.75rem;"><strong style="color:var(--accent);">클론 대전</strong> — 유저의 플레이 성향을 기록(<code>PlayStyleRecorder</code>)해 스냅샷으로 저장하고, 다른 유저가 그 기록과 싸우는 AI 대전을 구현했습니다.</p>
+          <p style="margin-top:0.75rem;"><strong style="color:var(--accent);">포획 · 저장</strong> — 포획 확률 공식과 연쇄 포획 연출 · 햅틱을 만들었고, 로컬 저장과 Firebase 클라우드 저장을 함께 쓰는 저장 시스템을 직접 설계했습니다.</p>
+        </div>
+        <div class="project-tags">
+          <span class="tag accent">Unity 6</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">LevelPlay</span>
+          <span class="tag">IAP</span>
+          <span class="tag">SOAP</span>
+          <span class="tag">C#</span>
+        </div>
+        <div class="project-links">
+          <a href="https://play.google.com/store/apps/details?id=com.molayong.sexycardrpg" class="project-link" target="_blank">Google Play →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Typing Clash -->
+    <div class="project-card reveal">
+      <div class="project-thumb">
+        <div class="project-thumb-bg" style="background: linear-gradient(135deg, #0a1a2a 0%, #102a40 100%);"></div>
+        <div class="project-thumb-icon">⌨️</div>
+      </div>
+      <div class="project-body">
+        <p class="project-type">Real-time Typing Battle · 개발 중 (Steam)</p>
+        <h3 class="project-title">Typing Clash</h3>
+        <div class="project-meta">
+          역할: <span>인게임 전투 · 네트워크 담당</span>
+          플랫폼: <span>PC (Steam)</span>
+          엔진: <span>Unity 6 URP / Photon Fusion 2 / Steamworks</span>
+        </div>
+        <div class="project-summary">
+          <p class="project-summary-title">// Summary</p>
+          <p>단어를 타이핑해 몬스터를 소환하고 마법을 써서 상대의 넥서스를 부수는 실시간 타이핑 대전 게임입니다. 입력한 단어를 해석해 소환할 유닛을 정하는 <code>ChatMonsterResolver</code>와 몬스터 AI · 스폰 · 투사체 시스템을 만들었습니다.</p>
+          <p style="margin-top:0.75rem;"><strong style="color:var(--accent);">멀티플레이</strong> — Photon Fusion 2 Shared 모드로 세션 · 플레이어 · 몬스터 동기화(<code>NetworkMonsterSync</code>)를 구현했고, Steam 인증은 Firebase Cloud Functions로 서버에서 검증하도록 연결했습니다.</p>
+          <p style="margin-top:0.75rem;"><strong style="color:var(--accent);">전략 요소</strong> — 일꾼 채굴 · 골드 경제 · 방어벽 · 건물과 메테오 · 빙결 · 독구름 같은 타이핑 마법, 싱글 모드용 CPU AI를 구현했습니다.</p>
+        </div>
+        <div class="project-tags">
+          <span class="tag accent">Photon Fusion 2</span>
+          <span class="tag">Steamworks</span>
+          <span class="tag">Firebase Functions</span>
+          <span class="tag">SOAP</span>
+          <span class="tag">C#</span>
+        </div>
+        <div class="project-links">
+          <a href="https://store.steampowered.com/app/3562030" class="project-link" target="_blank">Steam →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Super Slap Arena -->
+    <div class="project-card reveal">
+      <div class="project-thumb">
+        <div class="project-thumb-bg" style="background: linear-gradient(135deg, #2a1a0a 0%, #402810 100%);"></div>
+        <div class="project-thumb-icon">🖐️</div>
+      </div>
+      <div class="project-body">
+        <p class="project-type">Physics Ragdoll Party Brawler · 개발 중 · 1인 개발</p>
+        <h3 class="project-title">Super Slap Arena</h3>
+        <div class="project-meta">
+          역할: <span>기획 · 개발 · 빌드 전 과정 1인 개발</span>
+          플랫폼: <span>PC (Steam 예정)</span>
+          엔진: <span>Unity 6 URP / Photon Fusion 2 (Host) / Steamworks.NET</span>
+        </div>
+        <div class="project-summary">
+          <p class="project-summary-title">// Summary</p>
+          <p>액티브 래그돌 캐릭터로 따귀를 때려 상대를 쓰러뜨리는 온라인 파티 대전 게임입니다. 물리 판정이 클라이언트마다 달라지지 않도록 Photon Fusion을 Host 모드로 구성해 물리 계산을 한 곳에서 처리하게 설계했습니다.</p>
+          <p style="margin-top:0.75rem;"><strong style="color:var(--accent);">액티브 래그돌 · 따귀 전투</strong> — ConfigurableJoint 기반 래그돌과 스윙 추적 · 따귀 판정을 만들었고, 기를 모은 시간에 따라 데미지와 쿨다운이 커지도록 했습니다.</p>
+          <p style="margin-top:0.75rem;"><strong style="color:var(--accent);">온라인 · 콘텐츠</strong> — 빠른 매칭 · 방 코드 · 방장 이어받기 · Steam 친구 초대를 지원하고, 무중력 · 블랙홀 · 점프패드 · 미로 · 축구 · 왕관 모드 같은 맵 기믹과 아이템 에어드랍, 봇 AI를 구현했습니다. 23개 언어를 지원하고 EditMode 자동 테스트를 운영합니다.</p>
+        </div>
+        <div class="project-tags">
+          <span class="tag accent">Photon Fusion 2</span>
+          <span class="tag">Active Ragdoll</span>
+          <span class="tag">Steamworks</span>
+          <span class="tag">Addressables</span>
+          <span class="tag">C#</span>
+        </div>
+        <div class="project-links">
+          <span class="project-link" style="opacity:0.5; cursor:default;">개발 중</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RaidMyDungeon -->
+    <div class="project-card reveal">
+      <div class="project-thumb">
+        <div class="project-thumb-bg" style="background: linear-gradient(135deg, #1a0a2a 0%, #2a1040 100%);"></div>
+        <div class="project-thumb-icon">🏰</div>
+      </div>
+      <div class="project-body">
+        <p class="project-type">Dungeon Action &amp; Builder · 개발 중</p>
+        <h3 class="project-title">Raid My Dungeon</h3>
+        <div class="project-meta">
+          역할: <span>결정적 전투 시뮬레이션 · 리플레이 검증 · 전투 화면 · 던전 에디터</span>
+          플랫폼: <span>Android (개발 중)</span>
+          엔진: <span>Unity 6 URP / .NET 8 / Addressables</span>
+        </div>
+        <div class="project-summary">
+          <p class="project-summary-title">// Summary</p>
+          <p>영웅으로 다른 유저가 만든 던전을 공략하고, 직접 던전을 만들 수도 있는 게임입니다. 던전 클리어 기록을 서버에서 다시 돌려 검증할 수 있도록, 전투 로직을 Unity에 의존하지 않는 결정적(deterministic) 시뮬레이션으로 설계했습니다.</p>
+          <p style="margin-top:0.75rem;"><strong style="color:var(--accent);">결정적 시뮬레이션</strong> — 고정소수점 <code>FP</code>, 결정적 난수, 상태 해시, 60Hz 틱으로 시뮬레이션을 만들고, 어셈블리를 <code>noEngineReferences</code>로 분리해 Unity 코드가 섞이지 않게 막았습니다.</p>
+          <p style="margin-top:0.75rem;"><strong style="color:var(--accent);">리플레이 검증</strong> — .NET 8 검증 도구로 같은 입력을 돌렸을 때 Unity(Mono)와 .NET의 상태 해시가 일치하는지 자동 테스트로 확인합니다. 기획 CSV를 게임 데이터로 바꾸는 파이프라인도 함께 만들었습니다.</p>
+          <p style="margin-top:0.75rem;"><strong style="color:var(--accent);">전투 · 던전 에디터</strong> — 검사 3타 평타 · 띄우기 · 공중 콤보 · 히트스톱 · 몬스터 AI와 검사 · 아처 · 파이터 · 메이지 4종 영웅, 시뮬레이션 결과를 보여주는 뷰 계층과 던전 에디터를 구현했습니다.</p>
+        </div>
+        <div class="project-tags">
+          <span class="tag accent">Deterministic Sim</span>
+          <span class="tag">.NET 8</span>
+          <span class="tag">Addressables</span>
+          <span class="tag">UniTask</span>
+          <span class="tag">C#</span>
+        </div>
+        <div class="project-links">
+          <a href="https://play.google.com/store/apps/details?id=com.yonggames.raidmydungeon" class="project-link" target="_blank">Google Play →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DontWatchAds -->
+    <div class="project-card reveal">
+      <div class="project-thumb">
+        <div class="project-thumb-bg" style="background: linear-gradient(135deg, #2a2a0a 0%, #3a3a10 100%);"></div>
+        <div class="project-thumb-icon">📺</div>
+      </div>
+      <div class="project-body">
+        <p class="project-type">Casual Mobile · 개발 중</p>
+        <h3 class="project-title">Don't Watch Ads</h3>
+        <div class="project-meta">
+          역할: <span>개발 전반</span>
+          플랫폼: <span>Android (개발 중)</span>
+          엔진: <span>Unity 6 URP / Firebase / LevelPlay</span>
+        </div>
+        <div class="project-summary">
+          <p class="project-summary-title">// Summary</p>
+          <p>"광고를 보지 마세요"라는 컨셉의 캐주얼 모바일 게임입니다. HTML 프로토타입으로 컨셉을 먼저 검증한 뒤 Unity로 옮기고 있습니다.</p>
+          <p style="margin-top:0.75rem;"><strong style="color:var(--accent);">수익화 · 운영 기반</strong> — LevelPlay · AdMob 광고와 IAP 래퍼, Firebase Remote Config, Google 로그인, 안티치트, 한국어 조사 처리를 포함한 다국어 지원을 공통 코어로 구성했습니다.</p>
+        </div>
+        <div class="project-tags">
+          <span class="tag accent">LevelPlay</span>
+          <span class="tag">AdMob</span>
+          <span class="tag">IAP</span>
+          <span class="tag">Remote Config</span>
+          <span class="tag">C#</span>
+        </div>
+        <div class="project-links">
+          <a href="https://play.google.com/store/apps/details?id=com.yonggames.dontwatchads" class="project-link" target="_blank">Google Play →</a>
+        </div>
+      </div>
+    </div>
+
     <!-- Casual Series - full width -->
     <div class="project-card reveal" style="grid-column: 1 / -1;">
       <div class="project-body" style="padding: 2rem;">
@@ -868,6 +1040,18 @@
             <div class="casual-desc">Lives 시스템 · 게임 UI 전체 · 레벨 컨트롤러</div>
             <span class="project-link" style="cursor:default; opacity:0.5; font-size:0.68rem; margin-top:0.5rem; display:inline-block;">출시 심사 중</span>
           </div>
+        </div>
+        <p style="font-size:0.88rem; color:var(--text-muted); margin:1.5rem 0 0.75rem;">그 외 참여 타이틀:</p>
+        <div class="project-tags" style="margin-bottom:0;">
+          <span class="tag">Sexy Engine (공통 모듈)</span>
+          <span class="tag">Sexy 3 Tile Match</span>
+          <span class="tag">Sexy Arrow</span>
+          <span class="tag">Sexy Block Jam</span>
+          <span class="tag">Sexy Dot Connect</span>
+          <span class="tag">Sexy Gravity Ball</span>
+          <span class="tag">Sexy Hex Jam</span>
+          <span class="tag">Sexy Photo Puzzle</span>
+          <span class="tag">Sexy Picture Puzzle</span>
         </div>
         <div class="project-tags" style="margin-top: 1.5rem;">
           <span class="tag accent">Firebase</span>
